@@ -1,0 +1,42 @@
+input = "11-22,95-115,998-1012,1188511880-1188511890,222220-222224, 1698522-1698528,446443-446449,38593856-38593862,565653-565659, 824824821-824824827,2121212118-2121212124"
+fun isDoubled
+
+input = transformInput input / [[low,high],[],[],...]
+
+elo = map input
+	let invalidIds = flatmap (range input.low input.high) n
+		isdoubled (tostring n)
+		[n] else []
+	reduce  invalidIds
+result = reduce elo
+
+
+fn doubledigits n:
+	let digits = floor (log10 n) + 1
+	n*pow(10,digits)+n
+
+fn looprange = low: high:
+	let digits = floor (log10 low) + 1
+	let startNum = digits % 2 == 0?(
+		(low/(digits/2)) >= low % (pow(10,digits/2))?
+			(low/(digits/2))
+			:
+			(low/(digits/2)) + 1)
+		:pow(10,(digits+1) /2)
+
+	let digitsEnd = floor (log10 high) + 1
+	let endNum = digits % 2 == 0?(
+		(high/(digits/2)) >= high % (pow(10,digits/2))?
+			(low/(digits/2)) -1
+			:
+			(low/(digits/2)))
+		:pow(10,(digits)/2) -1
+	let inba = endNum - startNum;
+	map (range startNum endNum) (n: doubledigits n)
+
+reduce (flatmap input (n:
+	reduce looprange n.low n.high
+))
+
+
+
