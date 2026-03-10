@@ -1,0 +1,15 @@
+/home/heisenshark/repos/aoc2025/day5/bin/Debug/net8.0/day5
+/home/heisenshark/repos/aoc2025/day5/bin/Debug/net8.0/day5.deps.json
+/home/heisenshark/repos/aoc2025/day5/bin/Debug/net8.0/day5.runtimeconfig.json
+/home/heisenshark/repos/aoc2025/day5/bin/Debug/net8.0/day5.dll
+/home/heisenshark/repos/aoc2025/day5/bin/Debug/net8.0/day5.pdb
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.GeneratedMSBuildEditorConfig.editorconfig
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.AssemblyInfoInputs.cache
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.AssemblyInfo.cs
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.csproj.CoreCompileInputs.cache
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.sourcelink.json
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.dll
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/refint/day5.dll
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.pdb
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/day5.genruntimeconfig.cache
+/home/heisenshark/repos/aoc2025/day5/obj/Debug/net8.0/ref/day5.dll
