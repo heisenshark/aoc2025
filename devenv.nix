@@ -21,8 +21,7 @@
   languages.nim.enable = true;
   languages.raku.enable = true;
   languages.kotlin.enable = true;
-  languages.kotlin.lsp.enable = true;
-
+  languages.cplusplus.enable = true;
   # https://devenv.sh/processes/
   # processes.dev.exec = "${lib.getExe pkgs.watchexec} -n -- ls -la";
 
