@@ -80,7 +80,6 @@ point *processLine(string s) {
 }
 
 int main() {
-  std::cout << "test tsetsntsre tnrsent " << std::endl;
   string strBuff = "";
   ifstream Data("data.txt");
   auto lines = new pmr::vector<string>();
@@ -90,9 +89,6 @@ int main() {
     points.push_back(point);
   }
 
-  for (auto p : points) {
-    p->print();
-  }
 
   vector<TupleElem> list;
   float distances[1000][1000];
@@ -124,8 +120,19 @@ int main() {
   sort(results.begin(), results.end(), [](int a, int b) { return a > b; });
   int mult = 1;
   for (int i = 0; i < 3; i++) {
-    cout << results[i] << endl;
     mult *= results[i];
   }
   cout << mult << endl;
+  for (auto p : points)
+    p->checked = false;
+  int ii = 999;
+  while (floodFill(points[0]) != 1000) {
+    ii+=1;
+    list[ii].p1->connections.push_back(list[ii].p2);
+    list[ii].p2->connections.push_back(list[ii].p1);
+    for (auto p : points)
+      p->checked = false;
+  }
+
+  cout << (list[ii].p1)->x * (list[ii].p2)->x << endl;
 }
