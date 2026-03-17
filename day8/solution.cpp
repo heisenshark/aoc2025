@@ -2,6 +2,8 @@
 #include <cmath>
 #include <fstream>
 #include <iostream>
+#include <set>
+#include <stack>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
@@ -31,16 +33,24 @@ struct point {
 };
 
 int floodFill(point *p) {
-  if (p->checked) {
-    return 0;
-  } else {
-    p->checked = true;
-    int c = 0;
-    for (auto c : p->connections) {
-      c += floodFill(c);
+  set<point *> test;
+  stack<point *> toCheck;
+  test.insert(p);
+  toCheck.push(p);
+
+  while (!toCheck.empty()) {
+    auto pp = toCheck.top();
+
+    test.insert(pp);
+    pp->checked = true;
+    toCheck.pop();
+    for (auto c : pp->connections) {
+      if (!c->checked) {
+        toCheck.push(c);
+      }
     }
-    return 1 + c;
   }
+  return test.size();
 }
 
 struct TupleElem {
@@ -105,8 +115,17 @@ int main() {
     list[i].p1->connections.push_back(list[i].p2);
     list[i].p2->connections.push_back(list[i].p1);
   }
+  vector<int> results;
   for (int i = 0; i < 1000; i++) {
-    int d = floodFill(list[i].p1);
-    if(d!=0)cout << d << endl;
+    int d = floodFill(points[i]);
+    results.push_back(d);
   }
+
+  sort(results.begin(), results.end(), [](int a, int b) { return a > b; });
+  int mult = 1;
+  for (int i = 0; i < 3; i++) {
+    cout << results[i] << endl;
+    mult *= results[i];
+  }
+  cout << mult << endl;
 }
